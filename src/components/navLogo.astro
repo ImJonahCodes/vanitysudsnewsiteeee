@@ -1,0 +1,11 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../images/logo.png';
+import '../scripts/navLogo.js';
+---
+
+<div id="navbarEnd" class="navbar-end hidden">
+    <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="../templates/creative-agency/index.html" aria-label="Preline">
+      <Image src={logo} width="75" height="75" alt="A bird sitting on a nest of eggs." />
+    </a>
+</div>

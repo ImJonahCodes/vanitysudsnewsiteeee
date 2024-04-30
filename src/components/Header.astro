@@ -1,31 +1,47 @@
 ---
-import { buttonVariants } from '@/components/ui/button'
-import ThemeToggle from '@/components/ThemeToggle.astro'
+import { Image } from 'astro:assets';
+import logo from '../images/logo.png';
 ---
 
-<header
-  class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
->
-  <div
-    class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0"
-  >
-    <div class="flex gap-6 md:gap-10">
-      <a href="/" class="flex items-center space-x-2">
-        <span class="inline-block font-bold">Home</span>
-      </a>
+<div class="navbar bg-transparent lg:px-16">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </div>
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a>Home</a></li>
+        <li><a>Services</a></li>
+        <li><a>About Us</a></li>
+        <li><a>Blog</a></li>
+        <li><a>Contact Us</a></li>
+        <button class="shadow-[0_4px_14px_0_rgb(0,118,255,39%)] hover:shadow-[0_6px_20px_rgba(0,118,255,23%)] hover:bg-[rgba(0,118,255,0.9)] px-8 py-2 bg-primary rounded-md text-white font-light transition duration-200 ease-linear">
+          Book With Us
+        </button>
+      </ul>
     </div>
-    <div class="flex flex-1 items-center justify-end space-x-4">
-      <nav class="flex items-center space-x-1">
-        <a
-          href="https://github.com/AREA44/astro-shadcn-ui-template"
-          target="_blank"
-          rel="noreferrer"
-          class={buttonVariants({ variant: 'ghost' })}
-        >
-          GitHub
-        </a>
-        <ThemeToggle />
-      </nav>
-    </div>
+
+    <ul class="menu menu-horizontal px-1 hidden lg:flex">
+      <li><a>Home</a></li>
+      <li><a>Services</a></li>
+      <li><a>About Us</a></li>
+    </ul>
+
   </div>
-</header>
+  <div class="flex justify-center md:justify-end">
+    <!-- Logo -->
+    <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="../templates/creative-agency/index.html" aria-label="Preline">
+      <Image src={logo} width="75" height="75" alt="A bird sitting on a nest of eggs." />
+    </a>
+  </div>
+  <div class="navbar-end hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li><a>Blog</a></li>
+      <li><a>Contact Us</a></li>
+    </ul>
+    <button class="shadow-[0_4px_14px_0_rgb(0,118,255,39%)] hover:shadow-[0_6px_20px_rgba(0,118,255,23%)] hover:bg-[rgba(0,118,255,0.9)] px-8 py-2 bg-primary rounded-md text-white font-light transition duration-200 ease-linear">
+      Book With Us
+    </button>
+  </div>
+  
+</div>

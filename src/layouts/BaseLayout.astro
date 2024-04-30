@@ -15,8 +15,10 @@ const { title, description, ogImage } = Astro.props
 <html lang="en">
   <head>
     <HeadSEO title={title} description={description} ogImage={ogImage} />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
   </head>
-  <body class="min-h-screen bg-background font-sans antialiased">
+  <body class="dark min-h-screen bg-background font-sans antialiased">
     <div class="relative flex min-h-screen flex-col">
       <Header />
       <main class="flex-auto">
@@ -24,5 +26,7 @@ const { title, description, ogImage } = Astro.props
       </main>
       <Footer />
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
   </body>
 </html>
+<script is:inline src="./assets/vendor/preline/preline.js"></script>
