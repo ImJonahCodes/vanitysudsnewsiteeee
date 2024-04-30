@@ -1,14 +1,8 @@
-import { A as AstroError, c as InvalidImageService, d as ExpectedImageOptions, E as ExpectedImage, F as FailedToFetchRemoteImageDimensions, e as createAstro, f as createComponent, g as ImageMissingAlt, r as renderTemplate, m as maybeRenderHead, h as addAttribute, s as spreadAttributes, i as renderComponent, j as renderSlot, k as renderHead } from '../astro_ca3TNr0t.mjs';
-import 'kleur/colors';
+import { A as AstroError, c as InvalidImageService, d as ExpectedImageOptions, E as ExpectedImage, F as FailedToFetchRemoteImageDimensions, e as createAstro, f as createComponent, g as ImageMissingAlt, r as renderTemplate, m as maybeRenderHead, h as addAttribute, s as spreadAttributes } from '../astro_ca3TNr0t.mjs';
+import { r as resolveSrc, i as isRemoteImage, a as isESMImportedImage, b as isLocalService, D as DEFAULT_HASH_PROPS, c as isRemotePath, d as isRemoteAllowed } from '../astro/assets-service_D-VSHO_B.mjs';
 import 'html-escaper';
-import { clsx } from 'clsx';
-/* empty css                          */
-import { r as resolveSrc, i as isRemoteImage, a as isESMImportedImage, b as isLocalService, D as DEFAULT_HASH_PROPS } from '../astro/assets-service_D-VSHO_B.mjs';
-import { jsx } from 'react/jsx-runtime';
-import * as React from 'react';
-import { Slot } from '@radix-ui/react-slot';
-import { cva } from 'class-variance-authority';
-import { twMerge } from 'tailwind-merge';
+import 'clsx';
+import * as mime from 'mrmime';
 
 const decoder = new TextDecoder();
 const toUTF8String = (input, start = 0, end = input.length) => decoder.decode(input.slice(start, end));
@@ -915,9 +909,9 @@ async function getImage$1(options, imageConfig) {
   };
 }
 
-const $$Astro$6 = createAstro("http://localhost:4321");
+const $$Astro$1 = createAstro("http://localhost:4321");
 const $$Image = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$6, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Image;
   const props = Astro2.props;
   if (props.alt === void 0 || props.alt === null) {
@@ -937,9 +931,9 @@ const $$Image = createComponent(async ($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<img${addAttribute(image.src, "src")}${spreadAttributes(additionalAttributes)}${spreadAttributes(image.attributes)}>`;
 }, "/workspaces/vanitysudsnewsiteeee/node_modules/astro/components/Image.astro", void 0);
 
-const $$Astro$5 = createAstro("http://localhost:4321");
+const $$Astro = createAstro("http://localhost:4321");
 const $$Picture = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$5, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Picture;
   const defaultFormats = ["webp"];
   const defaultFallbackFormat = "png";
@@ -987,132 +981,89 @@ const $$Picture = createComponent(async ($$result, $$props, $$slots) => {
 const imageConfig = {"service":{"entrypoint":"astro/assets/services/sharp","config":{}},"domains":[],"remotePatterns":[]};
 					const getImage = async (options) => await getImage$1(options, imageConfig);
 
-const $$Astro$4 = createAstro("http://localhost:4321");
-const $$HeadSEO = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
-  Astro2.self = $$HeadSEO;
-  const canonicalURL = new URL(Astro2.url.pathname, Astro2.site);
-  if (Astro2.props.ogImage === void 0) {
-    Astro2.props.ogImage = new URL("og-image.png", canonicalURL);
+const fnv1a52 = (str) => {
+  const len = str.length;
+  let i = 0, t0 = 0, v0 = 8997, t1 = 0, v1 = 33826, t2 = 0, v2 = 40164, t3 = 0, v3 = 52210;
+  while (i < len) {
+    v0 ^= str.charCodeAt(i++);
+    t0 = v0 * 435;
+    t1 = v1 * 435;
+    t2 = v2 * 435;
+    t3 = v3 * 435;
+    t2 += v0 << 8;
+    t3 += v1 << 8;
+    t1 += t0 >>> 16;
+    v0 = t0 & 65535;
+    t2 += t1 >>> 16;
+    v1 = t1 & 65535;
+    v3 = t3 + (t2 >>> 16) & 65535;
+    v2 = t2 & 65535;
   }
-  const { title, description, ogImage } = Astro2.props;
-  return renderTemplate`<meta charset="utf-8"><meta name="robots" content="index, follow"><meta name="googlebot" content="index, follow"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator"${addAttribute(Astro2.generator, "content")}><link rel="canonical"${addAttribute(canonicalURL, "href")}><link rel="shortcut icon" type="image/svg+xml"${addAttribute(`${Astro2.site}favicon.svg`, "href")}><title>${title}</title><meta name="title"${addAttribute(title, "content")}><meta name="description"${addAttribute(description, "content")}><meta property="og:type" content="website"><meta property="og:url"${addAttribute(canonicalURL, "content")}><meta property="og:title"${addAttribute(title, "content")}><meta property="og:description"${addAttribute(description, "content")}><meta property="og:image"${addAttribute(ogImage, "content")}><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url"${addAttribute(canonicalURL, "content")}><meta property="twitter:title"${addAttribute(title, "content")}><meta property="twitter:description"${addAttribute(description, "content")}><meta property="twitter:image"${addAttribute(ogImage, "content")}>`;
-}, "/workspaces/vanitysudsnewsiteeee/src/components/HeadSEO.astro", void 0);
+  return (v3 & 15) * 281474976710656 + v2 * 4294967296 + v1 * 65536 + (v0 ^ v3 >> 4);
+};
+const etag = (payload, weak = false) => {
+  const prefix = weak ? 'W/"' : '"';
+  return prefix + fnv1a52(payload).toString(36) + payload.length.toString(36) + '"';
+};
 
-const $$Astro$3 = createAstro("http://localhost:4321");
-const $$Footer = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
-  Astro2.self = $$Footer;
-  return renderTemplate`${maybeRenderHead()}<footer class="border-t py-6 md:px-8 md:py-0"> <div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row"> <p class="text-center text-sm leading-loose text-muted-foreground md:text-left">
-Built by${" "} <a href="https://github.com/AREA44" target="_blank" rel="noreferrer" class="font-medium underline underline-offset-4">
-AREA44
-</a>
-. The source code is available on${" "} <a href="https://github.com/AREA44/astro-shadcn-ui-template" target="_blank" rel="noreferrer" class="font-medium underline underline-offset-4">
-GitHub
-</a>
-.
-</p> </div> </footer>`;
-}, "/workspaces/vanitysudsnewsiteeee/src/components/Footer.astro", void 0);
-
-const logo = new Proxy({"src":"/_astro/logo.BPyY9PrM.png","width":2000,"height":2000,"format":"png"}, {
-						get(target, name, receiver) {
-							if (name === 'clone') {
-								return structuredClone(target);
-							}
-							if (name === 'fsPath') {
-								return "/workspaces/vanitysudsnewsiteeee/src/images/logo.png";
-							}
-							
-							return target[name];
-						}
-					});
-
-const $$Astro$2 = createAstro("http://localhost:4321");
-const $$Header = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
-  Astro2.self = $$Header;
-  return renderTemplate`${maybeRenderHead()}<div class="navbar bg-transparent lg:px-16"> <div class="navbar-start"> <div class="dropdown"> <div tabindex="0" role="button" class="btn btn-ghost lg:hidden"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg> </div> <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"> <li><a>Home</a></li> <li><a>Services</a></li> <li><a>About Us</a></li> <li><a>Blog</a></li> <li><a>Contact Us</a></li> <button class="shadow-[0_4px_14px_0_rgb(0,118,255,39%)] hover:shadow-[0_6px_20px_rgba(0,118,255,23%)] hover:bg-[rgba(0,118,255,0.9)] px-8 py-2 bg-primary rounded-md text-white font-light transition duration-200 ease-linear">
-Book With Us
-</button> </ul> </div> <ul class="menu menu-horizontal px-1 hidden lg:flex"> <li><a>Home</a></li> <li><a>Services</a></li> <li><a>About Us</a></li> </ul> </div> <div class="flex justify-center md:justify-end"> <!-- Logo --> <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="../templates/creative-agency/index.html" aria-label="Preline"> ${renderComponent($$result, "Image", $$Image, { "src": logo, "width": "75", "height": "75", "alt": "A bird sitting on a nest of eggs." })} </a> </div> <div class="navbar-end hidden lg:flex"> <ul class="menu menu-horizontal px-1"> <li><a>Blog</a></li> <li><a>Contact Us</a></li> </ul> <button class="shadow-[0_4px_14px_0_rgb(0,118,255,39%)] hover:shadow-[0_6px_20px_rgba(0,118,255,23%)] hover:bg-[rgba(0,118,255,0.9)] px-8 py-2 bg-primary rounded-md text-white font-light transition duration-200 ease-linear">
-Book With Us
-</button> </div> </div>`;
-}, "/workspaces/vanitysudsnewsiteeee/src/components/Header.astro", void 0);
-
-var __freeze = Object.freeze;
-var __defProp = Object.defineProperty;
-var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
-var _a;
-const $$Astro$1 = createAstro("http://localhost:4321");
-const $$BaseLayout = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
-  Astro2.self = $$BaseLayout;
-  const { title, description, ogImage } = Astro2.props;
-  return renderTemplate(_a || (_a = __template(['<html lang="en"> <head>', '<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css">', '</head> <body class="dark min-h-screen bg-background font-sans antialiased"> <div class="relative flex min-h-screen flex-col"> ', ' <main class="flex-auto"> ', " </main> ", ' </div>  </body> </html> <script src="./assets/vendor/preline/preline.js"><\/script>'])), renderComponent($$result, "HeadSEO", $$HeadSEO, { "title": title, "description": description, "ogImage": ogImage }), renderHead(), renderComponent($$result, "Header", $$Header, {}), renderSlot($$result, $$slots["default"]), renderComponent($$result, "Footer", $$Footer, {}));
-}, "/workspaces/vanitysudsnewsiteeee/src/layouts/BaseLayout.astro", void 0);
-
-function cn(...inputs) {
-  return twMerge(clsx(inputs));
-}
-
-const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline"
-      },
-      size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10"
-      }
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default"
+async function loadRemoteImage(src, headers) {
+  try {
+    const res = await fetch(src, {
+      // Forward all headers from the original request
+      headers
+    });
+    if (!res.ok) {
+      return void 0;
     }
+    return await res.arrayBuffer();
+  } catch (err) {
+    return void 0;
   }
-);
-const Button = React.forwardRef(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
-    return /* @__PURE__ */ jsx(
-      Comp,
-      {
-        className: cn(buttonVariants({ variant, size, className })),
-        ref,
-        ...props
-      }
+}
+const GET = async ({ request }) => {
+  try {
+    const imageService = await getConfiguredImageService();
+    if (!("transform" in imageService)) {
+      throw new Error("Configured image service is not a local service");
+    }
+    const url = new URL(request.url);
+    const transform = await imageService.parseURL(url, imageConfig);
+    if (!transform?.src) {
+      throw new Error("Incorrect transform returned by `parseURL`");
+    }
+    let inputBuffer = void 0;
+    const isRemoteImage = isRemotePath(transform.src);
+    const sourceUrl = isRemoteImage ? new URL(transform.src) : new URL(transform.src, url.origin);
+    if (isRemoteImage && isRemoteAllowed(transform.src, imageConfig) === false) {
+      return new Response("Forbidden", { status: 403 });
+    }
+    inputBuffer = await loadRemoteImage(sourceUrl, isRemoteImage ? new Headers() : request.headers);
+    if (!inputBuffer) {
+      return new Response("Not Found", { status: 404 });
+    }
+    const { data, format } = await imageService.transform(
+      new Uint8Array(inputBuffer),
+      transform,
+      imageConfig
     );
+    return new Response(data, {
+      status: 200,
+      headers: {
+        "Content-Type": mime.lookup(format) ?? `image/${format}`,
+        "Cache-Control": "public, max-age=31536000",
+        ETag: etag(data.toString()),
+        Date: (/* @__PURE__ */ new Date()).toUTCString()
+      }
+    });
+  } catch (err) {
+    console.error("Could not process image request:", err);
+    return new Response(`Server Error: ${err}`, { status: 500 });
   }
-);
-Button.displayName = "Button";
+};
 
-const $$Astro = createAstro("http://localhost:4321");
-const $$404 = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
-  Astro2.self = $$404;
-  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "title": "404 - Not Found", "description": "404 Error \u2014 this page was not found" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="mt-32 flex flex-col items-center justify-center px-8"> <p class="text-sm text-muted-foreground">404</p> <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-Page not found
-</h1> <p class="mb-4 leading-7 [&:not(:first-child)]:mt-6">
-Sorry, we couldn't find the page you're looking for.
-</p> <a href="/" rel="noreferrer"${addAttribute(buttonVariants(), "class")}> Go back home</a> </div> ` })}`;
-}, "/workspaces/vanitysudsnewsiteeee/src/pages/404.astro", void 0);
-
-const $$file = "/workspaces/vanitysudsnewsiteeee/src/pages/404.astro";
-const $$url = "/404";
-
-const _404 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const generic = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
-  default: $$404,
-  file: $$file,
-  url: $$url
+  GET
 }, Symbol.toStringTag, { value: 'Module' }));
 
-export { $$BaseLayout as $, _404 as _, getConfiguredImageService as g, imageConfig as i };
+export { $$Image as $, generic as g };
