@@ -1,13 +1,25 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro'
-import Hero from '../components/home/hero.astro'
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '../components/home/hero.astro';
+import Services from '../components/home/services.astro';
+import AboutUs from '../components/home/about-us.astro'
+import CTA from '../components/ui/cta.astro'
+import Testimonials from '../components/home/testimonials.astro'
 ---
 
 <BaseLayout
-  title="Astro Shadcn UI Template"
-  description="This template helps you build apps with Astro, Tailwind CSS, and Shadcn UI."
+  title="Vanity Suds | Pittsburgh Mobile Detaling"
+  description="Top-quality detailing services and expert ceramic coating services for your vehicle - wherever, whenever!"
 >
   
 <Hero />
+
+<Services />
+
+<AboutUs />
+
+<CTA />
+
+<Testimonials />
 
 </BaseLayout>
