@@ -1,0 +1,68 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '../../components/services/hero.astro';
+import Service1 from '../../components/services/interior/service-1.astro';
+import Service2 from '../../components/services/interior/service-2.astro';
+import Services from '../../components/home/services.astro';
+import CTA from '../../components/ui/cta.astro';
+---
+
+<BaseLayout
+  title="Vanity Suds | Interior Detailing"
+  description="Top-quality detailing services and expert ceramic coating services for your vehicle - wherever, whenever!"
+>
+  
+<Hero 
+
+  title="INTERIOR DETAILING"
+  subTitle="Transform your car's interior with our meticulous detailing service, ensuring every surface is cleaned and rejuvenated to perfection."
+
+/>
+
+<Service1 
+
+  title='Basic Interior'
+  subTitle="Our Basic Interior Detail service is anything but basic. With our professional cleaning techniques, we will restore your vehicle's interior to its original condition, leaving it looking fresh and rejuvenated. Book an appointment today and experience the difference our detailers can make for your vehicle."
+  serviceOne='Vacuum:'
+  serviceOneDescription="Utilizing top-notch equipment and meticulous techniques, our professional vacuum service ensures a thorough clean, leaving your vehicle's interior fresh and debris-free."
+  serviceTwo='Clean Hard Surfaces:'
+  serviceTwoDescription="Experience a spotless shine with our hard surface cleaning service. Our expert team employs specialized techniques and top-quality products to restore cleanliness and luster to every surface of your vehicle."
+  serviceThree='Window Cleaning:'
+  serviceThreeDescription="See the world through crystal-clear windows with our professional window cleaning service. Using precision techniques and streak-free solutions, we ensure a pristine view for every drive."
+  serviceFour='Seat & Floor Mat Refinishing:'
+  serviceFourDescription="Revitalize your seats and floor mats with our expert refinishing service. Our skilled team employs professional-grade techniques to restore comfort and beauty to every inch of your vehicle's interior."
+  serviceFive='Plastic Enhancer:'
+  serviceFiveDescription="Renew your vehicle's plastic surfaces with our Plastic Enhancer service. Our specialized treatment revitalizes and protects plastic components, restoring their original luster and ensuring a refreshed appearance."
+  servicePrice='75'
+  image='https://i.imgur.com/WN0aSFh.jpg'
+
+
+/>
+
+<Service2
+
+  title='Premium Interior'
+  subTitle="Experience the ultimate in professional-grade cleaning with our Premium Interior Detail service. Our skilled technicians will expertly remove even the toughest grime and contamination, restoring your vehicle's interior to its original shine. With long-lasting protection, you can enjoy a pristine and luxurious driving experience. Book your appointment today for a service that is tailored to meet your needs. "
+  serviceOne='Everything In Basic:'
+  serviceOneDescription="Vacuum, Clean Hard Surfaces, Window Cleaning, Seat & Floor Mat Refinishing, and Plastic Enhancer."
+  serviceTwo='Seat & Floor Scrub:'
+  serviceTwoDescription="Using advanced techniques and professional-grade products, we remove dirt and grime from seats and floor mats, ensuring a refreshed and inviting driving experience."
+  serviceThree='Carpet & Mat Extraction/Steam:'
+  serviceThreeDescription="Our advanced techniques penetrate deep to remove stubborn stains and odors, ensuring a fresh and rejuvenated interior for a comfortable driving experience."
+  serviceFour='Trunk Extraction:'
+  serviceFourDescription="Our specialized techniques penetrate deep to remove dirt, debris, and odors, ensuring a clean and organized storage space for all your belongings."
+  servicePrice='125'
+  image='https://i.imgur.com/GDJNXQj.jpg'
+/>
+
+  <Services
+  
+    moreClasses='bg-foreground'
+    title='OTHER SERVICES'
+    subTitle='Explore Other Services That We Offer'
+  
+  />
+
+  <CTA />
+
+</BaseLayout>

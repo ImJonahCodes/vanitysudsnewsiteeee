@@ -1,0 +1,65 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '../../components/services/hero.astro';
+import Service1 from '../../components/services/exterior/service-1.astro';
+import Service2 from '../../components/services/exterior/service-2.astro';
+import Services from '../../components/home/services.astro';
+import CTA from '../../components/ui/cta.astro';
+---
+
+<BaseLayout
+  title="Vanity Suds | Exterior Detailing"
+  description="Top-quality detailing services and expert ceramic coating services for your vehicle - wherever, whenever!"
+>
+  
+<Hero 
+
+  title="EXTERIOR DETAILING"
+  subTitle="Restore your car's brilliance with our Exterior Detailing service, ensuring every curve gleams with meticulous care and attention."
+
+/>
+
+<Service1 
+
+  title='Basic Exterior'
+  subTitle="Our Basic Exterior Detail is the perfect choice for those looking to maintain the pristine condition of their vehicle. Our team of professionals will provide a thorough and professional grade exterior cleaning, ensuring that your car shines like new. Book an appointment today and give your vehicle the care it deserves."
+  serviceOne='2 Bucket Hand Wash:'
+  serviceOneDescription="Safely remove dirt and grime with our meticulous 2 Bucket Hand Wash service. Our careful technique ensures a thorough clean, leaving your vehicle sparkling without scratches or swirls."
+  serviceTwo='Wheel & Tire Cleaning:'
+  serviceTwoDescription="Our specialized treatment removes brake dust, grime, and debris, leaving behind a polished finish that enhances both appearance and safety on the road."
+  serviceThree='No-Sling Tire Shine:'
+  serviceThreeDescription="Our specialized treatment provides a long-lasting shine without the risk of sling-off, ensuring your tires look their best while driving."
+  
+  servicePrice='75'
+  image='https://i.imgur.com/mfe0iet.jpg'
+
+
+/>
+
+<Service2
+
+  title='Premium Exterior'
+  subTitle="Experience the ultimate in car care with our Premium Exterior Detail service. Designed for those who demand the best, our meticulous process will leave your vehicle looking shiny and water repellent for up to 3 months. Book your appointment now for a truly exceptional automotive pampering."
+  serviceOne='Everything In Basic:'
+  serviceOneDescription="2 Bucket Hand Wash, Wheel & Tire Cleaning and No-Sling Tire Shine."
+  serviceTwo='Pre-Wash:'
+  serviceTwoDescription="Our advanced pre-wash technique targets and loosens stubborn bugs, grime, and debris, ensuring they're safely removed before the contact wash, preserving your car's paintwork and ensuring a pristine finish."
+  serviceThree='Foam Cannon:'
+  serviceThreeDescription="Our high-pressure foam application is a extra step in effectively lifting and loosening dirt and grime, providing a deep clean that primes your vehicle for a thorough wash, ensuring every inch shines with brilliance."
+  serviceFour='3 Month Paint Coating/Sealant:'
+  serviceFourDescription="Our advanced formula creates a durable barrier against environmental elements, ensuring your car maintains its showroom shine and protection for months to come."
+  servicePrice='150'
+  image='https://i.imgur.com/ZNtmrgI.jpg'
+/>
+
+  <Services
+  
+    moreClasses='bg-foreground'
+    title='OTHER SERVICES'
+    subTitle='Explore Other Services That We Offer'
+  
+  />
+
+  <CTA />
+
+</BaseLayout>

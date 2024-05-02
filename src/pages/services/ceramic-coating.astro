@@ -1,0 +1,40 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '../../components/services/hero.astro';
+import Services from '../../components/home/services.astro';
+import CTA from '../../components/ui/cta.astro';
+import CeramicCoatings from '../../components/services/ceramic-coatings/priceTable.astro'
+import PriceTable from '../../components/services/ceramic-coatings/priceTable.astro';
+import Paint from '../../components/services/ceramic-coatings/paint.astro';
+import Form from '../../components/services/ceramic-coatings/form.astro'
+---
+
+<BaseLayout
+  title="Vanity Suds | Ceramic Coatings"
+  description="Top-quality detailing services and expert ceramic coating services for your vehicle - wherever, whenever!"
+>
+  
+<Hero 
+
+  title="CERAMIC COATING"
+  subTitle="Enhance and protect your vehicle's shine with our Ceramic Coating, providing long-lasting defense against the elements for a showroom-worthy finish."
+
+/>
+
+<Paint />
+
+<Form />
+
+<PriceTable />
+
+  <Services
+  
+    moreClasses='bg-foreground'
+    title='OTHER SERVICES'
+    subTitle='Explore Other Services That We Offer'
+  
+  />
+
+  <CTA />
+
+</BaseLayout>

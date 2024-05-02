@@ -3,13 +3,28 @@
 import React from "react";
 import { BackgroundGradient } from "../ui/background-gradient";
 import { Image } from 'astro:assets';
+
+
+const {
+  title,
+  subTitle,
+  moreClasses,
+} = Astro.props;
+
+// Define TypeScript interface for props
+interface Props {
+  title: string;
+  subTitle?: string;
+  moreClasses?: string,
+}
+
 ---
 
 <!-- Card Blog -->
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto border-t-2 border-primary">
+<div id="services" class=`max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto border-t-2 border-primary ${moreClasses}`>
     <div class="div pb-10 text-center">
-        <h1 class="text-4xl font-bold text-primary">OUR SERVICES</h1>
-        <p class="pt-4 lg:px-52">Embark on a journey of automotive excellence with our specialized detailing services, meticulously curated to breathe new life into your vehicle, revealing its true beauty with every meticulous touch.</p>
+        <h1 class="text-4xl font-bold text-primary">{title}</h1>
+        <p class="pt-4 lg:px-52 text-white">{subTitle}</p>
     </div>
   <!-- Grid -->
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -20,15 +35,15 @@ import { Image } from 'astro:assets';
             
         </div>
         <div class="p-4 md:p-6">
-            <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:hover:text-white">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white dark:hover:text-white">
             Interior Detailing
             </h3>
-            <p class="mt-3 text-gray-500 dark:text-neutral-500">
+            <p class="mt-3 text-gray-500 dark:text-neutral-300">
             Transform your car's interior with our meticulous detailing service, ensuring every surface is cleaned and rejuvenated to perfection.
             </p>
         </div>
         <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-primary dark:divide-primary">
-            <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-950 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="#">
+            <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-950 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="/services/interior-detailing">
             Read More About This Service
             </a>
         </div>
@@ -40,15 +55,15 @@ import { Image } from 'astro:assets';
             
         </div>
         <div class="p-4 md:p-6">
-            <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:hover:text-white">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white dark:hover:text-white">
             Exterior Detailing
             </h3>
-            <p class="mt-3 text-gray-500 dark:text-neutral-500">
+            <p class="mt-3 text-gray-500 dark:text-neutral-300">
             Restore your car's brilliance with our Exterior Detailing service, ensuring every curve gleams with meticulous care and attention.
             </p>
         </div>
         <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-primary dark:divide-primary">
-            <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-950 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="#">
+            <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-950 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="/services/exterior-detailing">
             Read More About This Service
             </a>
         </div>
@@ -60,15 +75,15 @@ import { Image } from 'astro:assets';
             
         </div>
         <div class="p-4 md:p-6">
-            <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:hover:text-white">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white dark:hover:text-white">
             Ceramic Coating
             </h3>
-            <p class="mt-3 text-gray-500 dark:text-neutral-500">
+            <p class="mt-3 text-gray-500 dark:text-neutral-300">
             Enhance and protect your vehicle's shine with our Ceramic Coating, providing long-lasting defense against the elements for a showroom-worthy finish.
             </p>
         </div>
         <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-primary dark:divide-primary">
-            <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-950 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="#">
+            <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-950 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="/services/ceramic-coating">
             Read More About This Service
             </a>
         </div>
@@ -80,10 +95,10 @@ import { Image } from 'astro:assets';
             
         </div>
         <div class="p-4 md:p-6">
-            <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:hover:text-white">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white dark:hover:text-white">
             Paint Corrections
             </h3>
-            <p class="mt-3 text-gray-500 dark:text-neutral-500">
+            <p class="mt-3 text-gray-500 dark:text-neutral-300">
             Revitalize your car's appearance with our Paint Correction service, restoring clarity and depth to your vehicle's paintwork for a flawless finish.
             </p>
         </div>
@@ -100,10 +115,10 @@ import { Image } from 'astro:assets';
             
         </div>
         <div class="p-4 md:p-6">
-            <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:hover:text-white">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white dark:hover:text-white">
             Other Add-Ons
             </h3>
-            <p class="mt-3 text-gray-500 dark:text-neutral-500">
+            <p class="mt-3 text-gray-500 dark:text-neutral-300">
             Customize your detailing experience with our range of extra add-ons, including pet hair removal, iron decontamination, and more, tailored to meet your car's specific needs.
             </p>
         </div>

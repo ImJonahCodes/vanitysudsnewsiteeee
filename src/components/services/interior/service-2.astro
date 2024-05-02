@@ -1,0 +1,181 @@
+---
+
+const {
+  title,
+  subTitle,
+  serviceOne,
+  serviceOneDescription,
+  serviceTwo,
+  serviceTwoDescription,
+  serviceThree,
+  serviceThreeDescription,
+  serviceFour,
+  serviceFourDescription,
+  serviceFive,
+  serviceFiveDescription,
+  servicePrice,
+  image,
+} = Astro.props;
+
+// Define TypeScript interface for props
+interface Props {
+  title: string;
+  subTitle?: string;
+  serviceOne?: string,
+  serviceOneDescription?: string,
+  serviceTwo?: string,
+  serviceTwoDescription?: string,
+  serviceThree?: string,
+  serviceThreeDescription?: string,
+  serviceFour?: string,
+  serviceFourDescription?: string,
+  serviceFive?: string,
+  serviceFiveDescription?: string,
+  servicePrice?: string,
+  image?: string,
+}
+
+---
+<!-- Approach -->
+<div class="">
+    <!-- Approach -->
+    <div class="max-w-5xl px-4 xl:px-0 py-10 lg:pt-20 lg:pb-20 mx-auto">
+      <!-- Title -->
+      <div class="mb-10 lg:mb-14 lg:text-center">
+        <h2 class="text-primary font-semibold text-2xl md:text-4xl md:leading-tight">{title}</h2>
+        <p class="mt-1 text-neutral-300">{subTitle}</p>
+      </div>
+      <!-- End Title -->
+  
+      <!-- Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 lg:items-center">
+        <div class="aspect-w-16 aspect-h-9 lg:aspect-none block lg:hidden">
+          <img class="w-full object-cover rounded-xl" src={image} alt="Interior Image">
+        </div>
+        <!-- End Col -->
+        <!-- Timeline -->
+        <div>
+          <!-- Heading -->
+          <div class="mb-4">
+            <h3 class="text-primary text-md font-semibold uppercase">
+              WHATS INCLUDED
+            </h3>
+          </div>
+          <!-- End Heading -->
+  
+          <!-- Item -->
+          <div class="flex gap-x-5 ms-1">
+            <!-- Icon -->
+            <div class="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800">
+              <div class="relative z-10 size-8 flex justify-center items-center">
+                <span class="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-primary font-semibold text-xs uppercase rounded-full">
+                  1
+                </span>
+              </div>
+            </div>
+            <!-- End Icon -->
+  
+            <!-- Right Content -->
+            <div class="grow pt-0.5 pb-8 sm:pb-12">
+              <p class="text-sm lg:text-base text-neutral-300">
+                <span class="text-white text-lg">{serviceOne}</span>
+                {serviceOneDescription}
+              </p>
+            </div>
+            <!-- End Right Content -->
+          </div>
+          <!-- End Item -->
+  
+          <!-- Item -->
+          <div class="flex gap-x-5 ms-1">
+            <!-- Icon -->
+            <div class="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800">
+              <div class="relative z-10 size-8 flex justify-center items-center">
+                <span class="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-primary font-semibold text-xs uppercase rounded-full">
+                  2
+                </span>
+              </div>
+            </div>
+            <!-- End Icon -->
+  
+            <!-- Right Content -->
+            <div class="grow pt-0.5 pb-8 sm:pb-12">
+              <p class="text-sm lg:text-base text-neutral-300">
+                <span class="text-white text-lg">{serviceTwo}</span>
+                {serviceTwoDescription}
+              </p>
+            </div>
+            <!-- End Right Content -->
+          </div>
+          <!-- End Item -->
+  
+          <!-- Item -->
+          <div class="flex gap-x-5 ms-1">
+            <!-- Icon -->
+            <div class="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800">
+              <div class="relative z-10 size-8 flex justify-center items-center">
+                <span class="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-primary font-semibold text-xs uppercase rounded-full">
+                  3
+                </span>
+              </div>
+            </div>
+            <!-- End Icon -->
+  
+            <!-- Right Content -->
+            <div class="grow pt-0.5 pb-8 sm:pb-12">
+              <p class="text-sm lg:text-base text-neutral-300">
+                <span class="text-white text-lg">{serviceThree}</span>
+                {serviceThreeDescription}
+              </p>
+            </div>
+            <!-- End Right Content -->
+          </div>
+          <!-- End Item -->
+  
+          <!-- Item -->
+          <div class="flex gap-x-5 ms-1">
+            <!-- Icon -->
+            <div class="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800">
+              <div class="relative z-10 size-8 flex justify-center items-center">
+                <span class="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-primary font-semibold text-xs uppercase rounded-full">
+                  4
+                </span>
+              </div>
+            </div>
+            <!-- End Icon -->
+  
+            <!-- Right Content -->
+            <div class="grow pt-0.5 pb-8 sm:pb-12">
+              <p class="text-sm lg:text-base text-neutral-300">
+                <span class="text-white text-lg">{serviceFour}</span>
+                {serviceFourDescription}
+              </p>
+            </div>
+            <!-- End Right Content -->
+          </div>
+          <!-- End Item -->
+
+
+  
+          <button class="shadow-[0_4px_14px_0_rgb(0,118,255,39%)] hover:shadow-[0_6px_20px_rgba(0,118,255,23%)] hover:bg-[rgba(0,118,255,0.9)] px-8 py-2 bg-primary rounded-md text-white font-bold transition duration-200 ease-linear ml-2">
+            BOOK THIS SERVICE
+          </button>
+
+          <div class="mt-6">
+            <button class="btn text-white border-primary w-full bg-gradient-to-bl from-neutral-800 via-neutral-900 to-neutral-950">
+              Pricing Starting At 
+              <div class="badge bg-primary text-white border-0">${servicePrice}</div> <span class="text-xs italic">*pricing varies</span>
+            </button>
+          </div>
+          
+        </div>
+        <!-- End Timeline -->
+        <div class="aspect-w-16 aspect-h-9 lg:aspect-none hidden lg:flex">
+          <img class="w-full object-cover rounded-xl" src={image} alt="Interior Image">
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Grid -->
+    </div>
+  </div>
+  <!-- End Approach -->
